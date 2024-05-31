@@ -7,11 +7,9 @@ import numpy as np
 from nltk import sent_tokenize
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-prediction_path', type=str, default='/home/nlp/ernstor1/alignmentEval/annotation_checker_pkg/Task3_Datasets/devMultiNews_test0_checkpoint-2000_negative.csv')#'/home/nlp/ernstor1/alignmentDerivedDatasets/highlighting/models/MultiNews_only/test_results_None.csv')
-# parser.add_argument('-prediction_metadata_path', type=str, default='/home/nlp/ernstor1/alignmentDerivedDatasets/highlighting/data/CDLM/MultiNews_test_CDLM_allAlignments_fixed_truncated_metadata.csv')#'/home/nlp/ernstor1/alignmentDerivedDatasets/highlighting/data/CDLM/MultiNews_test_CDLM_allAlignments_fixed_truncated_metadata.csv')
-# parser.add_argument('-prediction_path_w_metadata', type=str, default='/home/nlp/ernstor1/alignmentDerivedDatasets/chatGPT/predicted_highlights_gpt35.csv')
-parser.add_argument('-gold_path', type=str, default='/home/nlp/ernstor1/alignmentDerivedDatasets/test_original_text.csv')#'/home/nlp/ernstor1/alignmentDerivedDatasets/highlighting/models/MultiNews_only/test_results_None.csv')
-parser.add_argument('-summaries_path', type=str, default='/home/nlp/ernstor1/autoAlignment/eval_data/summaries/MultiNews/test/')
+
+parser.add_argument('-alignment_path', type=str, default='.')
+parser.add_argument('-summaries_path', type=str, default='.')
 args = parser.parse_args()
 
 
@@ -26,16 +24,7 @@ def read_generic_file(filepath):
         #     text.append(line.strip())
     return text
 
-def read_predicted(gold_selected_topics):
-    alignments = pd.read_csv(args.prediction_path)
-    # selected_topics = alignments['topic'].drop_duplicates().to_list()[:100]
-    #
-    #
-    alignments = alignments[alignments['topic'].isin(gold_selected_topics)]  #use only the topics from gold
-    positive_alignments = alignments[alignments['pred_prob'] >= 0.5]
 
-
-    return positive_alignments
 
 
 def read_gold():
