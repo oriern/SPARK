@@ -3,7 +3,12 @@ Data for the paper "The Power of Summary-Source Alignments" presented at ACL Fin
 
 We denote this data suite as ``SPARK'', for Summary Proposition Alignment for Reconstructive Knowledgebases.
 
-## Derive SPARK datasets for train and val sets##
+## Manual test set
+The alignment annotation can be found in `manual_alignments.csv`.
+
+All derived datasets, were derived automatically by using `createSubDatasets.py` script, and can be found in the `derived_datasets` directory.
+
+## Derive SPARK datasets for train and val sets
 
 1. Download MultiNews train and dev datasets [here](https://github.com/Alex-Fabbri/Multi-News).
 2. Parse the data:
