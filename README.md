@@ -10,11 +10,13 @@ We denote this data suite as ``SPARK'', for Summary Proposition Alignment for Re
 ```
   python parseMultiNews.py
 ```
-3. Cluster the data and add query:
+
+3.   SuperPAL alignments of MultiNews train and val datasets can be found [here](https://drive.google.com/drive/folders/1JnRrdbENzBLpbae5ZIKmil1fuZhm2toc?usp=sharing).
+
+4. Cluster the data and add query:
 ```
-  python add_query.py
+  python add_query.py -alignment_path <ALIGNMENTS_PATH>  -summaries_path <PARSED_SUMMARY_DIR_PATH>
 ```
-4.   SuperPAL alignments of MultiNews train and val datasets can be found [here](https://drive.google.com/drive/folders/1JnRrdbENzBLpbae5ZIKmil1fuZhm2toc?usp=sharing).
 
 5. Generate derived datasets out of an alignment file use:
 ```
