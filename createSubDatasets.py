@@ -179,10 +179,10 @@ def sentenceFusion(alignments):
 
 
 parser = argparse.ArgumentParser()
-parser.add_argument('-alignments_path', type=str,  default='/home/nlp/ernstor1/alignmentDerivedDatasets/evidence_detection/data_alignments_gold_w_query_fixed.csv')
-parser.add_argument('-doc_path', type=str,  default='/home/nlp/ernstor1/alignmentDerivedDatasets/data/MultiNews/test')
-parser.add_argument('-summ_path', type=str,  default='/home/nlp/ernstor1/alignmentDerivedDatasets/data/MultiNews/test/summaries')
-parser.add_argument('-out_dir_path', type=str, default='publish_data/')
+parser.add_argument('-alignments_path', type=str,  default='.')
+parser.add_argument('-doc_path', type=str,  default='.')
+parser.add_argument('-summ_path', type=str,  default='.')
+parser.add_argument('-out_dir_path', type=str, default='derived_datasets/')
 args = parser.parse_args()
 
 if __name__ == "__main__":
