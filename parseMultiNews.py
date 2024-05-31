@@ -6,6 +6,7 @@ import io
 import re
 from nltk import word_tokenize
 from unidecode import unidecode
+import argparse
 
 
 
@@ -89,8 +90,7 @@ def parse_data(topic_path):
 
 
 
-MultiNews_dev_dir = r'C:\Users\user\Documents\Phd\mturk\data\documents\dev_data\MultiNews'
-MultiNews_test_dir = r'C:\Users\user\Documents\Phd\mturk\data\documents\test_data\MultiNews'
+
 
 # for dataset_dir in [MultiNews_dev_dir, MultiNews_test_dir]:
 #     for topic in listdir(dataset_dir):
@@ -100,4 +100,11 @@ MultiNews_test_dir = r'C:\Users\user\Documents\Phd\mturk\data\documents\test_dat
 #         parse_data(topic_path)
 
 
-parse_data(r'C:\Users\user\Documents\Phd\autoAlignment\eval_data\org')
+parser = argparse.ArgumentParser()
+
+parser.add_argument('-data_path', type=str, default='.')
+args = parser.parse_args()
+
+
+
+parse_data(args.data_path)
