@@ -8,7 +8,7 @@ We denote this data suite as ``SPARK'', for Summary Proposition Alignment for Re
 1. Download MultiNews train and dev datasets [here](https://github.com/Alex-Fabbri/Multi-News).
 2. Parse the data:
 ```
-  python parseMultiNews.py
+  python parseMultiNews.py -data_path <MULTINEWS_PATH>
 ```
 
 3.   SuperPAL alignments of MultiNews train and val datasets can be found [here](https://drive.google.com/drive/folders/1JnRrdbENzBLpbae5ZIKmil1fuZhm2toc?usp=sharing).
